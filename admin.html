@@ -559,13 +559,15 @@
     let pendingChanges = [];
     let searchTimeout = null;
 
-    // Load artists on page load
+    // Load artists on page load - always fetch fresh from GitHub
     async function loadArtists() {
       try {
-        const response = await fetch('artists.json');
+        // Fetch from GitHub raw to ensure we have the latest
+        const response = await fetch('https://raw.githubusercontent.com/alltechdev/ytmusicjson/main/artists.json?t=' + Date.now());
         if (!response.ok) throw new Error('Failed to load artists.json');
-        artists = await response.json();
-        originalArtists = JSON.parse(JSON.stringify(artists)); // Deep clone
+        const rawText = await response.text();
+        artists = JSON.parse(rawText);
+        originalArtists = JSON.parse(rawText); // Keep as string then parse to avoid reference issues
         updateUI();
         showAlert('success', `Loaded ${artists.artists.length} artists successfully`);
       } catch (error) {
@@ -693,7 +695,7 @@
       btn.innerHTML = '<span class="loading"></span><span>Saving...</span>';
 
       try {
-        // Get current file SHA
+        // Get current file SHA and raw content
         const fileResponse = await fetch('https://api.github.com/repos/alltechdev/ytmusicjson/contents/artists.json', {
           headers: {
             'Authorization': `token ${token}`,
@@ -706,8 +708,34 @@
         const fileData = await fileResponse.json();
         const sha = fileData.sha;
 
-        // Prepare commit - preserve Unicode characters
-        const jsonString = JSON.stringify(artists, null, 2);
+        // Get the raw file content to preserve exact formatting
+        const rawResponse = await fetch('https://raw.githubusercontent.com/alltechdev/ytmusicjson/main/artists.json');
+        if (!rawResponse.ok) throw new Error('Failed to fetch raw file');
+        const rawText = await rawResponse.text();
+
+        // Parse the raw JSON to preserve formatting
+        let currentData;
+        try {
+          currentData = JSON.parse(rawText);
+        } catch (e) {
+          throw new Error('Failed to parse current JSON: ' + e.message);
+        }
+
+        // Apply only the specific changes
+        for (const change of pendingChanges) {
+          if (change.type === 'add') {
+            // Add new entry (only if not already present)
+            if (!currentData.artists.some(a => a.id === change.id)) {
+              currentData.artists.push({ id: change.id, name: change.name });
+            }
+          } else if (change.type === 'delete') {
+            // Remove entry
+            currentData.artists = currentData.artists.filter(a => a.id !== change.id);
+          }
+        }
+
+        // Stringify with exact same formatting as original (2 spaces)
+        const jsonString = JSON.stringify(currentData, null, 2);
         const utf8Bytes = new TextEncoder().encode(jsonString);
         const binaryString = Array.from(utf8Bytes, byte => String.fromCharCode(byte)).join('');
         const content = btoa(binaryString);
