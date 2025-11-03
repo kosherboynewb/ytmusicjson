@@ -706,8 +706,12 @@
         const fileData = await fileResponse.json();
         const sha = fileData.sha;
 
-        // Prepare commit
-        const content = btoa(unescape(encodeURIComponent(JSON.stringify(artists, null, 2))));
+        // Prepare commit - preserve Unicode characters
+        const jsonString = JSON.stringify(artists, null, 2);
+        const utf8Bytes = new TextEncoder().encode(jsonString);
+        const binaryString = Array.from(utf8Bytes, byte => String.fromCharCode(byte)).join('');
+        const content = btoa(binaryString);
+
         const message = `Update artists.json\n\n${pendingChanges.map(c =>
           c.type === 'add' ? `- Added: ${c.name}` : `- Removed: ${c.name}`
         ).join('\n')}`;
