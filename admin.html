@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Manager - Admin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .panel-header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #667eea;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+      border-color: #667eea;
+    }
+
+    .form-help {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 5px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-success {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #059669;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .btn-secondary {
+      background: #6b7280;
+      color: white;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+
+    .btn-secondary:hover {
+      background: #4b5563;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    .search-results {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-top: 15px;
+    }
+
+    .search-result-item {
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+
+    .search-result-item:hover {
+      border-color: #667eea;
+    }
+
+    .search-result-info h4 {
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .search-result-info p {
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    .artist-list {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .artist-item {
+      padding: 15px;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .artist-item:hover {
+      background: #f9fafb;
+    }
+
+    .artist-info h4 {
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .artist-info p {
+      color: #888;
+      font-size: 0.85rem;
+      font-family: monospace;
+    }
+
+    .stats-bar {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    .alert {
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .alert-success {
+      background: #d1fae5;
+      color: #065f46;
+      border-left: 4px solid #10b981;
+    }
+
+    .alert-error {
+      background: #fee2e2;
+      color: #991b1b;
+      border-left: 4px solid #ef4444;
+    }
+
+    .alert-info {
+      background: #dbeafe;
+      color: #1e40af;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .config-section {
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .search-input-container {
+      position: relative;
+    }
+
+    .search-input-container .loading {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-color: rgba(102, 126, 234, 0.3);
+      border-top-color: #667eea;
+    }
+
+    .filter-input {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .changes-panel {
+      background: #fef3c7;
+      border: 2px solid #f59e0b;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .changes-panel h3 {
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+
+    .changes-list {
+      max-height: 150px;
+      overflow-y: auto;
+      background: white;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .change-item {
+      padding: 5px 0;
+      font-size: 0.9rem;
+      color: #78350f;
+    }
+
+    /* Login Screen */
+    .login-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .login-box h2 {
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .login-box p {
+      color: #666;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .login-error {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      display: none;
+    }
+
+    .app-content {
+      display: none;
+    }
+
+    .app-content.unlocked {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <h2>🔒 Admin Access</h2>
+      <p>Enter password to continue</p>
+      <div id="loginError" class="login-error">Incorrect password</div>
+      <form id="loginForm" onsubmit="return false;">
+        <input type="password" id="passwordInput" class="form-input" placeholder="Enter password" autocomplete="off" autofocus>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">
+          <span>🔓</span>
+          <span>Unlock</span>
+        </button>
+      </form>
+      <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: #999;">
+        Need access? Contact the repository owner.
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App Content -->
+  <div id="appContent" class="app-content container">
+    <div class="header">
+      <h1>🎵 Artist Manager</h1>
+      <p>Add or remove artists from your collection</p>
+    </div>
+
+    <!-- Alerts -->
+    <div id="alertSuccess" class="alert alert-success"></div>
+    <div id="alertError" class="alert alert-error"></div>
+    <div id="alertInfo" class="alert alert-info"></div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value" id="totalArtists">0</div>
+        <div class="stat-label">Total Artists</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="pendingChanges">0</div>
+        <div class="stat-label">Pending Changes</div>
+      </div>
+      <div>
+        <button class="btn btn-success" id="saveChangesBtn" disabled>
+          <span>💾</span>
+          <span>Save to GitHub</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pending Changes Panel -->
+    <div id="changesPanel" class="changes-panel">
+      <h3>⚠️ Pending Changes</h3>
+      <div id="changesList" class="changes-list"></div>
+      <button class="btn btn-secondary" onclick="resetChanges()">Reset Changes</button>
+    </div>
+
+    <!-- GitHub Config -->
+    <div class="config-section">
+      <label class="form-label">GitHub Personal Access Token (required for saving)</label>
+      <input type="password" id="githubToken" class="form-input" placeholder="ghp_...">
+      <div class="form-help">
+        Need a token? <a href="https://github.com/settings/tokens/new?scopes=repo&description=Artist%20Manager" target="_blank">Create one here</a> with 'repo' scope
+      </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+      <!-- Add Artist Panel -->
+      <div class="panel">
+        <div class="panel-header">➕ Add Artist</div>
+
+        <div class="form-group">
+          <label class="form-label">Search YouTube Music</label>
+          <div class="search-input-container">
+            <input type="text" id="searchInput" class="form-input" placeholder="Search for an artist...">
+            <div id="searchLoading" class="loading" style="display: none;"></div>
+          </div>
+        </div>
+
+        <div id="searchResults" class="search-results"></div>
+
+        <div style="margin: 20px 0; text-align: center; color: #999;">— OR —</div>
+
+        <div class="form-group">
+          <label class="form-label">Artist Name</label>
+          <input type="text" id="manualName" class="form-input" placeholder="Enter artist name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Channel ID</label>
+          <input type="text" id="manualId" class="form-input" placeholder="UC...">
+          <div class="form-help">Find this in the YouTube channel URL</div>
+        </div>
+
+        <button class="btn btn-primary" onclick="addArtistManually()">
+          <span>➕</span>
+          <span>Add Artist</span>
+        </button>
+      </div>
+
+      <!-- Artist List Panel -->
+      <div class="panel">
+        <div class="panel-header">📋 Current Artists</div>
+
+        <input type="text" id="filterInput" class="filter-input" placeholder="Filter artists...">
+
+        <div id="artistList" class="artist-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="dist/ytmusic-bundle.js"></script>
+
+  <script type="module">
+    // Password Protection with SHA-256
+    // To set a new password:
+    // 1. Open browser console
+    // 2. Run: await crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR_PASSWORD')).then(h => console.log(Array.from(new Uint8Array(h)).map(b => b.toString(16).padStart(2, '0')).join('')))
+    // 3. Replace PASSWORD_HASH below with the output
+
+    const PASSWORD_HASH = '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'; // Default: 'password' - CHANGE THIS!
+
+    async function checkPassword(password) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(password);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      return hashHex === PASSWORD_HASH;
+    }
+
+    // Handle login
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const password = document.getElementById('passwordInput').value;
+      const isValid = await checkPassword(password);
+
+      if (isValid) {
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('appContent').classList.add('unlocked');
+        sessionStorage.setItem('authenticated', 'true');
+        loadArtists();
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+        document.getElementById('passwordInput').value = '';
+        setTimeout(() => {
+          document.getElementById('loginError').style.display = 'none';
+        }, 3000);
+      }
+    });
+
+    // Check if already authenticated in this session
+    if (sessionStorage.getItem('authenticated') === 'true') {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('appContent').classList.add('unlocked');
+    }
+
+    let artists = { artists: [] };
+    let originalArtists = null;
+    let pendingChanges = [];
+    let searchTimeout = null;
+
+    // Load artists on page load
+    async function loadArtists() {
+      try {
+        const response = await fetch('artists.json');
+        if (!response.ok) throw new Error('Failed to load artists.json');
+        artists = await response.json();
+        originalArtists = JSON.parse(JSON.stringify(artists)); // Deep clone
+        updateUI();
+        showAlert('success', `Loaded ${artists.artists.length} artists successfully`);
+      } catch (error) {
+        showAlert('error', 'Error loading artists: ' + error.message);
+      }
+    }
+
+    // Update UI
+    function updateUI() {
+      document.getElementById('totalArtists').textContent = artists.artists.length;
+      renderArtistList();
+      updateChangesUI();
+    }
+
+    // Render artist list
+    function renderArtistList(filter = '') {
+      const listEl = document.getElementById('artistList');
+      const filterLower = filter.toLowerCase();
+
+      const filtered = filter
+        ? artists.artists.filter(a => a.name.toLowerCase().includes(filterLower))
+        : artists.artists;
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = '<div style="text-align: center; padding: 40px; color: #999;">No artists found</div>';
+        return;
+      }
+
+      listEl.innerHTML = filtered
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map(artist => `
+          <div class="artist-item" data-id="${escapeHtml(artist.id)}">
+            <div class="artist-info">
+              <h4>${escapeHtml(artist.name)}</h4>
+              <p>${escapeHtml(artist.id)}</p>
+            </div>
+            <button class="btn btn-danger" onclick="window.deleteArtist('${escapeHtml(artist.id)}')">
+              🗑️ Delete
+            </button>
+          </div>
+        `).join('');
+    }
+
+    // Search YouTube Music
+    async function searchYouTubeMusic(query) {
+      const searchResults = document.getElementById('searchResults');
+      const searchLoading = document.getElementById('searchLoading');
+
+      if (!query.trim()) {
+        searchResults.innerHTML = '';
+        return;
+      }
+
+      searchLoading.style.display = 'block';
+      searchResults.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">Searching...</div>';
+
+      try {
+        // Use YouTube Music search via bundled library
+        // This will be implemented with the bundled ytmusic-api
+        const results = await searchArtists(query);
+
+        if (results.length === 0) {
+          searchResults.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">No results found</div>';
+          return;
+        }
+
+        searchResults.innerHTML = results.map(artist => `
+          <div class="search-result-item">
+            <div class="search-result-info">
+              <h4>${escapeHtml(artist.name)}</h4>
+              <p>${escapeHtml(artist.id)}</p>
+            </div>
+            <button class="btn btn-primary" onclick="window.addArtistFromSearch('${escapeHtml(artist.id)}', '${escapeHtml(artist.name)}')">
+              ➕ Add
+            </button>
+          </div>
+        `).join('');
+      } catch (error) {
+        searchResults.innerHTML = `<div style="text-align: center; padding: 20px; color: #ef4444;">Error: ${escapeHtml(error.message)}</div>`;
+      } finally {
+        searchLoading.style.display = 'none';
+      }
+    }
+
+    // Search using ytmusic-api
+    async function searchArtists(query) {
+      // Wait for YTMusicAPI to be available
+      let attempts = 0;
+      while (!window.YTMusicAPI && attempts < 10) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+        attempts++;
+      }
+
+      if (!window.YTMusicAPI) {
+        throw new Error('YouTube Music API not loaded. Please refresh the page.');
+      }
+
+      try {
+        const results = await window.YTMusicAPI.searchArtists(query);
+        return results;
+      } catch (error) {
+        console.error('Search error:', error);
+        throw error;
+      }
+    }
+
+    // Add artist from search
+    window.addArtistFromSearch = function(id, name) {
+      if (artists.artists.some(a => a.id === id)) {
+        showAlert('error', 'Artist already exists');
+        return;
+      }
+
+      artists.artists.push({ id, name });
+      pendingChanges.push({ type: 'add', id, name });
+      updateUI();
+      showAlert('success', `Added "${name}" to the list`);
+
+      // Clear search
+      document.getElementById('searchInput').value = '';
+      document.getElementById('searchResults').innerHTML = '';
+    };
+
+    // Add artist manually
+    window.addArtistManually = function() {
+      const name = document.getElementById('manualName').value.trim();
+      const id = document.getElementById('manualId').value.trim();
+
+      if (!name || !id) {
+        showAlert('error', 'Please enter both artist name and channel ID');
+        return;
+      }
+
+      if (artists.artists.some(a => a.id === id)) {
+        showAlert('error', 'Artist with this channel ID already exists');
+        return;
+      }
+
+      artists.artists.push({ id, name });
+      pendingChanges.push({ type: 'add', id, name });
+      updateUI();
+      showAlert('success', `Added "${name}" to the list`);
+
+      // Clear inputs
+      document.getElementById('manualName').value = '';
+      document.getElementById('manualId').value = '';
+    };
+
+    // Delete artist
+    window.deleteArtist = function(id) {
+      const artist = artists.artists.find(a => a.id === id);
+      if (!artist) return;
+
+      if (!confirm(`Delete "${artist.name}"?`)) return;
+
+      artists.artists = artists.artists.filter(a => a.id !== id);
+      pendingChanges.push({ type: 'delete', id, name: artist.name });
+      updateUI();
+      showAlert('success', `Deleted "${artist.name}"`);
+    };
+
+    // Update changes UI
+    function updateChangesUI() {
+      const count = pendingChanges.length;
+      document.getElementById('pendingChanges').textContent = count;
+      document.getElementById('saveChangesBtn').disabled = count === 0;
+
+      const panel = document.getElementById('changesPanel');
+      const list = document.getElementById('changesList');
+
+      if (count === 0) {
+        panel.style.display = 'none';
+      } else {
+        panel.style.display = 'block';
+        list.innerHTML = pendingChanges.map(change => `
+          <div class="change-item">
+            ${change.type === 'add' ? '➕ Added' : '🗑️ Deleted'}: ${escapeHtml(change.name)}
+          </div>
+        `).join('');
+      }
+    }
+
+    // Reset changes
+    window.resetChanges = function() {
+      if (!confirm('Discard all changes?')) return;
+
+      artists = JSON.parse(JSON.stringify(originalArtists));
+      pendingChanges = [];
+      updateUI();
+      showAlert('info', 'All changes discarded');
+    };
+
+    // Save to GitHub
+    async function saveToGitHub() {
+      const token = document.getElementById('githubToken').value.trim();
+
+      if (!token) {
+        showAlert('error', 'Please enter your GitHub Personal Access Token');
+        return;
+      }
+
+      const btn = document.getElementById('saveChangesBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span><span>Saving...</span>';
+
+      try {
+        // Get current file SHA
+        const fileResponse = await fetch('https://api.github.com/repos/alltechdev/ytmusicjson/contents/artists.json', {
+          headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+
+        if (!fileResponse.ok) throw new Error('Failed to fetch current file');
+
+        const fileData = await fileResponse.json();
+        const sha = fileData.sha;
+
+        // Prepare commit
+        const content = btoa(unescape(encodeURIComponent(JSON.stringify(artists, null, 2))));
+        const message = `Update artists.json\n\n${pendingChanges.map(c =>
+          c.type === 'add' ? `- Added: ${c.name}` : `- Removed: ${c.name}`
+        ).join('\n')}`;
+
+        // Commit changes
+        const commitResponse = await fetch('https://api.github.com/repos/alltechdev/ytmusicjson/contents/artists.json', {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message,
+            content,
+            sha
+          })
+        });
+
+        if (!commitResponse.ok) {
+          const error = await commitResponse.json();
+          throw new Error(error.message || 'Failed to commit changes');
+        }
+
+        // Success!
+        originalArtists = JSON.parse(JSON.stringify(artists));
+        pendingChanges = [];
+        updateUI();
+        showAlert('success', '✅ Changes saved to GitHub successfully!');
+
+      } catch (error) {
+        showAlert('error', 'Failed to save: ' + error.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>💾</span><span>Save to GitHub</span>';
+      }
+    }
+
+    // Event listeners
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => searchYouTubeMusic(e.target.value), 500);
+    });
+
+    document.getElementById('filterInput').addEventListener('input', (e) => {
+      renderArtistList(e.target.value);
+    });
+
+    document.getElementById('saveChangesBtn').addEventListener('click', saveToGitHub);
+
+    // Utility functions
+    function showAlert(type, message) {
+      const alerts = {
+        success: document.getElementById('alertSuccess'),
+        error: document.getElementById('alertError'),
+        info: document.getElementById('alertInfo')
+      };
+
+      // Hide all alerts
+      Object.values(alerts).forEach(el => el.style.display = 'none');
+
+      // Show the specific alert
+      const alert = alerts[type];
+      alert.textContent = message;
+      alert.style.display = 'block';
+
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        alert.style.display = 'none';
+      }, 5000);
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Load token from localStorage if available
+    const savedToken = localStorage.getItem('githubToken');
+    if (savedToken) {
+      document.getElementById('githubToken').value = savedToken;
+    }
+
+    // Save token to localStorage when changed
+    document.getElementById('githubToken').addEventListener('change', (e) => {
+      localStorage.setItem('githubToken', e.target.value);
+    });
+
+    // Initialize
+    loadArtists();
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "ytmusicjson-admin",
+  "version": "1.0.0",
+  "description": "Admin interface for managing YouTube Music artists",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "ytmusic-api": "^5.3.0"
+  }
+}
