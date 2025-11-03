@@ -30,7 +30,7 @@
     },
     {
       "id": "UC0G86THXeKPXlHHjbP1aT4g",
-      "name": "Aaron Razel - אהרן רזאל"
+      "name": "Aaron Razel - \u05d0\u05d4\u05e8\u05df \u05e8\u05d6\u05d0\u05dc"
     },
     {
       "id": "UCcOPPzoEoOQpwCJ41YaVzhA",
@@ -94,7 +94,7 @@
     },
     {
       "id": "UCQ0d-kkuQ8tEtVNTx4QWWBw",
-      "name": "Akiva Pamensky - עקיבא פמנסקי"
+      "name": "Akiva Pamensky - \u05e2\u05e7\u05d9\u05d1\u05d0 \u05e4\u05de\u05e0\u05e1\u05e7\u05d9"
     },
     {
       "id": "UCmU8Xfs9bg5HaHHyY_LSA3g",
@@ -190,7 +190,7 @@
     },
     {
       "id": "UCpisTPlZZUfL5Nrh_7580Fg",
-      "name": "Ariel Borzutzky - אריאל בורסוצקי"
+      "name": "Ariel Borzutzky - \u05d0\u05e8\u05d9\u05d0\u05dc \u05d1\u05d5\u05e8\u05e1\u05d5\u05e6\u05e7\u05d9"
     },
     {
       "id": "UC-IytIgeQ3cYGSzzOzwPq9w",
@@ -306,11 +306,11 @@
     },
     {
       "id": "UCLljg9gBVW8HYjF6sbAC2HA",
-      "name": "Avishai Eshel - אבישי אשל"
+      "name": "Avishai Eshel - \u05d0\u05d1\u05d9\u05e9\u05d9 \u05d0\u05e9\u05dc"
     },
     {
       "id": "UC0sJoEby4DQuqoCkBUloHrw",
-      "name": "Avraham Cohen - אברהם כהן"
+      "name": "Avraham Cohen - \u05d0\u05d1\u05e8\u05d4\u05dd \u05db\u05d4\u05df"
     },
     {
       "id": "UCYCuK2Id45YDJBmrM4oV_hA",
@@ -665,10 +665,6 @@
       "name": "Cantor Zevulun \"Zavel\" Kwartin"
     },
     {
-      "id": "UCjDtyVbRs07BKDbW0R41mIg",
-      "name": "Cedars of Lebanon"
-    },
-    {
       "id": "UCtaKFa4MJ6UhyPWlFG2gHHw",
       "name": "CGI Detroit Girls"
     },
@@ -686,7 +682,7 @@
     },
     {
       "id": "UCytwF3fpk4cF0AMZVj-E7Uw",
-      "name": "Chaim Chezkel - חיים חזקל"
+      "name": "Chaim Chezkel - \u05d7\u05d9\u05d9\u05dd \u05d7\u05d6\u05e7\u05dc"
     },
     {
       "id": "UCn68TyMJCASbKN8j1uBszwA",
@@ -746,7 +742,7 @@
     },
     {
       "id": "UCP3G80JEWp5vAEKDm1zRywA",
-      "name": "Chaim Portal - חיים פורטל"
+      "name": "Chaim Portal - \u05d7\u05d9\u05d9\u05dd \u05e4\u05d5\u05e8\u05d8\u05dc"
     },
     {
       "id": "UCqZEueqIcgzbBlaOMR2xTdw",
@@ -770,7 +766,7 @@
     },
     {
       "id": "UC8p1USV4uZ4Az7Df5qqoisg",
-      "name": "Chaim Yaskil - חיים ישכיל"
+      "name": "Chaim Yaskil - \u05d7\u05d9\u05d9\u05dd \u05d9\u05e9\u05db\u05d9\u05dc"
     },
     {
       "id": "UCioBv6D3X9OucAzjsbhiBwg",
@@ -1013,10 +1009,6 @@
       "name": "Diaspora Yeshiva Band"
     },
     {
-      "id": "UCsubMbzugKrZwy5Ajju83PA",
-      "name": "Distant Cousins"
-    },
-    {
       "id": "UC2mLURMYuif4wrwgRIiyM0A",
       "name": "DJ AVI"
     },
@@ -1034,7 +1026,7 @@
     },
     {
       "id": "UC07C_kmJdW9q2773uvDwPcg",
-      "name": "DJ Niso Slob - ניסו סלוב"
+      "name": "DJ Niso Slob - \u05e0\u05d9\u05e1\u05d5 \u05e1\u05dc\u05d5\u05d1"
     },
     {
       "id": "UC_ioDwlWIjKENlaYKC3Ft-w",
@@ -1266,7 +1258,7 @@
     },
     {
       "id": "UC23eX6d6juE2YT0aa7nL97A",
-      "name": "Elaytzur - אלייצור"
+      "name": "Elaytzur - \u05d0\u05dc\u05d9\u05d9\u05e6\u05d5\u05e8"
     },
     {
       "id": "UCjwQTok34EPxAo7fzu7JiiQ",
@@ -1418,7 +1410,7 @@
     },
     {
       "id": "UCXfH-2gWczubMoUuj6xqIxw",
-      "name": "evën sh'siyah"
+      "name": "ev\u00ebn sh'siyah"
     },
     {
       "id": "UCkRNx0McM_EVSz0qs2Dmq2A",
@@ -1530,7 +1522,7 @@
     },
     {
       "id": "UC-lHN5ZiysUhuU4xm6tRzpw",
-      "name": "Harel Tal - הראל טל"
+      "name": "Harel Tal - \u05d4\u05e8\u05d0\u05dc \u05d8\u05dc"
     },
     {
       "id": "UCwGqnpVyCJhUOsiJ6f0lPdA",
@@ -1802,7 +1794,7 @@
     },
     {
       "id": "UCeX0PNgQJMqyOyzYJnPFAOw",
-      "name": "Kippalive - כיפה-לייב"
+      "name": "Kippalive - \u05db\u05d9\u05e4\u05d4-\u05dc\u05d9\u05d9\u05d1"
     },
     {
       "id": "UC-yX7NSifn4-q3lcOm0xALw",
@@ -1822,11 +1814,11 @@
     },
     {
       "id": "UCRvg41IvfBdXTapY_ty65og",
-      "name": "Kobi Grinboim - קובי גרינבוים"
+      "name": "Kobi Grinboim - \u05e7\u05d5\u05d1\u05d9 \u05d2\u05e8\u05d9\u05e0\u05d1\u05d5\u05d9\u05dd"
     },
     {
       "id": "UCa5f0ObOF_Lv4FSbK4fEZMA",
-      "name": "Kobi Mirsky - קובי מירסקי"
+      "name": "Kobi Mirsky - \u05e7\u05d5\u05d1\u05d9 \u05de\u05d9\u05e8\u05e1\u05e7\u05d9"
     },
     {
       "id": "UCirTzIAf09PtE0eOZgXF4Jg",
@@ -1934,7 +1926,7 @@
     },
     {
       "id": "UCbHAqOYJillJ6vFRXkYNSkw",
-      "name": "Liad Banai - ליעד בנאי"
+      "name": "Liad Banai - \u05dc\u05d9\u05e2\u05d3 \u05d1\u05e0\u05d0\u05d9"
     },
     {
       "id": "UCpcTAnR15Dqlu2QJ-XcbLhQ",
@@ -1958,7 +1950,7 @@
     },
     {
       "id": "UCL36Xtz4BIISA-jMGzyUItw",
-      "name": "L’Chaim OG"
+      "name": "L\u2019Chaim OG"
     },
     {
       "id": "UCEg5tmfi6WmJZRnezYLVHSg",
@@ -1966,7 +1958,7 @@
     },
     {
       "id": "UCTKCxKIKaTwEZ3p-zezdP9g",
-      "name": "Malchus Choir - מקהלת מלכות"
+      "name": "Malchus Choir - \u05de\u05e7\u05d4\u05dc\u05ea \u05de\u05dc\u05db\u05d5\u05ea"
     },
     {
       "id": "UCtVnFlLe2_Bv1o0Vz2019QA",
@@ -2026,7 +2018,7 @@
     },
     {
       "id": "UCmj-SVO498cF9wTA0SKd5aA",
-      "name": "Meir Ben Dror - מאיר בן דרור"
+      "name": "Meir Ben Dror - \u05de\u05d0\u05d9\u05e8 \u05d1\u05df \u05d3\u05e8\u05d5\u05e8"
     },
     {
       "id": "UC_yQzUx1YXBlBH795X748Gg",
@@ -2346,7 +2338,7 @@
     },
     {
       "id": "UC3ZK6GXNJu6bL2az3GdGDtA",
-      "name": "Mordechai Gottlieb - מרדכי גוטליב"
+      "name": "Mordechai Gottlieb - \u05de\u05e8\u05d3\u05db\u05d9 \u05d2\u05d5\u05d8\u05dc\u05d9\u05d1"
     },
     {
       "id": "UCkXv-eeQzaR4zTNZepAbgUw",
@@ -2402,15 +2394,15 @@
     },
     {
       "id": "UCE-RbJjvCNlszw1qzfraqAg",
-      "name": "Moshe Dovid Weissmandel - משה דוד וייסמנדל"
+      "name": "Moshe Dovid Weissmandel - \u05de\u05e9\u05d4 \u05d3\u05d5\u05d3 \u05d5\u05d9\u05d9\u05e1\u05de\u05e0\u05d3\u05dc"
     },
     {
       "id": "UCvKf28K13nV9lPtReC9k-tg",
-      "name": "Moshe Dweck - משה דוויק"
+      "name": "Moshe Dweck - \u05de\u05e9\u05d4 \u05d3\u05d5\u05d5\u05d9\u05e7"
     },
     {
       "id": "UC4xhDvLjoxYL1s8CRgwAy6Q",
-      "name": "Moshe Feld - משה פלד"
+      "name": "Moshe Feld - \u05de\u05e9\u05d4 \u05e4\u05dc\u05d3"
     },
     {
       "id": "UCH5TWA46szWeEpZchukaYEg",
@@ -2610,7 +2602,7 @@
     },
     {
       "id": "UCbRfjRte3-LFOtZ459O-Wdw",
-      "name": "Natanel Aboksis - נתנאל אבקסיס"
+      "name": "Natanel Aboksis - \u05e0\u05ea\u05e0\u05d0\u05dc \u05d0\u05d1\u05e7\u05e1\u05d9\u05e1"
     },
     {
       "id": "UCe69PMLrX2JIcm-9lCxmnlw",
@@ -2626,7 +2618,7 @@
     },
     {
       "id": "UCdryVfjbE-stNJ1FBCkJWVQ",
-      "name": "Nehorai Arieli - נהוראי אריאלי"
+      "name": "Nehorai Arieli - \u05e0\u05d4\u05d5\u05e8\u05d0\u05d9 \u05d0\u05e8\u05d9\u05d0\u05dc\u05d9"
     },
     {
       "id": "UCCxmSp4ySkfbNjVkA6pRhgw",
@@ -2642,11 +2634,11 @@
     },
     {
       "id": "UC88l4ZpEMhc9Q-xytqV0F-g",
-      "name": "Neshama Choir - מקהלת נשמה"
+      "name": "Neshama Choir - \u05de\u05e7\u05d4\u05dc\u05ea \u05e0\u05e9\u05de\u05d4"
     },
     {
       "id": "UC5ScxB63nYz0OndIADFAwGQ",
-      "name": "Netanel - נתנאל"
+      "name": "Netanel - \u05e0\u05ea\u05e0\u05d0\u05dc"
     },
     {
       "id": "UCWP1sKdqAMLpJnCc9aCeICg",
@@ -2730,7 +2722,7 @@
     },
     {
       "id": "UCwXL1tjB23v07DvhcOQHVbA",
-      "name": "Oded Manshari - עודד מנשרי"
+      "name": "Oded Manshari - \u05e2\u05d5\u05d3\u05d3 \u05de\u05e0\u05e9\u05e8\u05d9"
     },
     {
       "id": "UCbVQLUnjO1jsQU66pOAUYCg",
@@ -2978,11 +2970,11 @@
     },
     {
       "id": "UC4dmY2KARLNeoyEpmBOL9pA",
-      "name": "R’ Chaim Duvid Blum"
+      "name": "R\u2019 Chaim Duvid Blum"
     },
     {
       "id": "UCzO25gJ0zn2Hhu10n0n2m4g",
-      "name": "R’ Yoel Ferber"
+      "name": "R\u2019 Yoel Ferber"
     },
     {
       "id": "UCeb-Kw9qTcvpBakT7H4_J9A",
@@ -3014,15 +3006,15 @@
     },
     {
       "id": "UClpevhQKBXNEywY-2lRJqbQ",
-      "name": "Sara’la"
+      "name": "Sara\u2019la"
     },
     {
       "id": "UCij8wdLf9IHW5_6uLR3cCgQ",
-      "name": "Saúl Suli"
+      "name": "Sa\u00fal Suli"
     },
     {
       "id": "UCe8NorbF_w4Y13JmLzbpcIw",
-      "name": "Saúl Suli"
+      "name": "Sa\u00fal Suli"
     },
     {
       "id": "UCQZJH2kEKLECIeD79w6L1uQ",
@@ -3234,7 +3226,7 @@
     },
     {
       "id": "UCNJ5L9w6E_ZavmNfROp-lww",
-      "name": "Shimon Sibony - שמעון סיבוני"
+      "name": "Shimon Sibony - \u05e9\u05de\u05e2\u05d5\u05df \u05e1\u05d9\u05d1\u05d5\u05e0\u05d9"
     },
     {
       "id": "UCbJp_MSROMaN1o0RwrfzKCQ",
@@ -3242,7 +3234,7 @@
     },
     {
       "id": "UCqagfxK3U01lGOiRXaYLYQA",
-      "name": "Shir V’shevach Boys Choir"
+      "name": "Shir V\u2019shevach Boys Choir"
     },
     {
       "id": "UC5jOhK498NkrO2r_U9lPrzQ",
@@ -3410,7 +3402,7 @@
     },
     {
       "id": "UCsIhzTmpQIiDcfb4_opqtRQ",
-      "name": "Shmuel - שמואל"
+      "name": "Shmuel - \u05e9\u05de\u05d5\u05d0\u05dc"
     },
     {
       "id": "UCmO7Yc7vLxiMQepRO9KHFeQ",
@@ -3446,7 +3438,7 @@
     },
     {
       "id": "UC_30I6RrK_UZdmuHnI6d87g",
-      "name": "Shmulik Sukkot - שמוליק סוכות"
+      "name": "Shmulik Sukkot - \u05e9\u05de\u05d5\u05dc\u05d9\u05e7 \u05e1\u05d5\u05db\u05d5\u05ea"
     },
     {
       "id": "UCKTRJWPadvjB4LQxsD2b6lQ",
@@ -3458,7 +3450,7 @@
     },
     {
       "id": "UCy1hR7-mgDBajYx24nQA9LA",
-      "name": "Shneor Orel - שניאור אוראל"
+      "name": "Shneor Orel - \u05e9\u05e0\u05d9\u05d0\u05d5\u05e8 \u05d0\u05d5\u05e8\u05d0\u05dc"
     },
     {
       "id": "UCk5gcTsnDO2D5JfiKg9Ep5A",
@@ -3734,7 +3726,7 @@
     },
     {
       "id": "UCeJy8LBy-M-9fcVQMWu2-Yg",
-      "name": "Tor Marquis - תור מרקי"
+      "name": "Tor Marquis - \u05ea\u05d5\u05e8 \u05de\u05e8\u05e7\u05d9"
     },
     {
       "id": "UCe7xy1HdwslcsN67BZVjKhg",
@@ -3762,7 +3754,7 @@
     },
     {
       "id": "UCPlJGAf_-CkcN-gpc1EW_rg",
-      "name": "Tzemed Yeled - צמד ילד"
+      "name": "Tzemed Yeled - \u05e6\u05de\u05d3 \u05d9\u05dc\u05d3"
     },
     {
       "id": "UClL99ghX8G0HiaT-n_BCpww",
@@ -3806,7 +3798,7 @@
     },
     {
       "id": "UC1QQ-QQ2ldBDAL8vfvsq9Ng",
-      "name": "Tzviki Rand - צביקי רנד"
+      "name": "Tzviki Rand - \u05e6\u05d1\u05d9\u05e7\u05d9 \u05e8\u05e0\u05d3"
     },
     {
       "id": "UCiOSnSRl9lEN-gVIX7ZIpTg",
@@ -3838,7 +3830,7 @@
     },
     {
       "id": "UCzgjbHbhYFEUKEGbxp0dU8g",
-      "name": "Vach Family - משפחת ואך"
+      "name": "Vach Family - \u05de\u05e9\u05e4\u05d7\u05ea \u05d5\u05d0\u05da"
     },
     {
       "id": "UCwicf9p7snlivxXuNytTsag",
@@ -3894,7 +3886,7 @@
     },
     {
       "id": "UC9qvhqjlw-B8opRaK2HSEOw",
-      "name": "Yaakov Israel - יעקב ישראל"
+      "name": "Yaakov Israel - \u05d9\u05e2\u05e7\u05d1 \u05d9\u05e9\u05e8\u05d0\u05dc"
     },
     {
       "id": "UCLw9ayC1rVTsPRMQwXopwJQ",
@@ -4230,7 +4222,7 @@
     },
     {
       "id": "UCJohR7RBelNRz3cB3IVjKJw",
-      "name": "Yitzchok Honig יצחק האניג"
+      "name": "Yitzchok Honig \u05d9\u05e6\u05d7\u05e7 \u05d4\u05d0\u05e0\u05d9\u05d2"
     },
     {
       "id": "UC_gi-PRiu0a71T5UsnPbL1Q",
@@ -4354,7 +4346,7 @@
     },
     {
       "id": "UCIs-s_nxV5WKupy0gEGZiXw",
-      "name": "Yonatan Razel - יונתן רזאל"
+      "name": "Yonatan Razel - \u05d9\u05d5\u05e0\u05ea\u05df \u05e8\u05d6\u05d0\u05dc"
     },
     {
       "id": "UCxBkd0HGpsMSxBDMTPHINdQ",
@@ -4374,7 +4366,7 @@
     },
     {
       "id": "UCLX96CvePcSbLa6PeGkV42Q",
-      "name": "Yoni Genut - יוני גנוט"
+      "name": "Yoni Genut - \u05d9\u05d5\u05e0\u05d9 \u05d2\u05e0\u05d5\u05d8"
     },
     {
       "id": "UC5HPUUfm8XrcdrB9ViCUC1Q",
@@ -4602,7 +4594,7 @@
     },
     {
       "id": "UCOq0EqEpnbkaCRWNi2ZSOVg",
-      "name": "Yuval Sela - יובל סלע"
+      "name": "Yuval Sela - \u05d9\u05d5\u05d1\u05dc \u05e1\u05dc\u05e2"
     },
     {
       "id": "UCJ9MOj5CuA0gaehrxG5usMw",
@@ -4734,19 +4726,19 @@
     },
     {
       "id": "UCony_70Oyz1c0sf098TuPrQ",
-      "name": "אלי קליין"
+      "name": "\u05d0\u05dc\u05d9 \u05e7\u05dc\u05d9\u05d9\u05df"
     },
     {
       "id": "UCCeTS6fJ8OXWa_bvzdj8pqg",
-      "name": "האחים כליף"
+      "name": "\u05d4\u05d0\u05d7\u05d9\u05dd \u05db\u05dc\u05d9\u05e3"
     },
     {
       "id": "UCYzxoGxkhSSAgLf0YCi3hPg",
-      "name": "ווקאלי CHOIR"
+      "name": "\u05d5\u05d5\u05e7\u05d0\u05dc\u05d9 CHOIR"
     },
     {
       "id": "UC1cAoehDLyZdBs875EKXLvQ",
-      "name": "יהודה"
+      "name": "\u05d9\u05d4\u05d5\u05d3\u05d4"
     }
   ]
 }
