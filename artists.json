@@ -1,10 +1,6 @@
 {
   "artists": [
     {
-      "id": "UCjgCYlDrW4KfazEah3uT5cA",
-      "name": "Akiva"
-    },
-    {
       "id": "UCw1oCoEMF_o65tpDHItwwUQ",
       "name": "8th Day"
     },
@@ -75,6 +71,10 @@
     {
       "id": "UCDco-P09OKUWxCnnxqfbLWA",
       "name": "Aizik Friedman"
+    },
+    {
+      "id": "UCjgCYlDrW4KfazEah3uT5cA",
+      "name": "Akiva"
     },
     {
       "id": "UC_o9EoI-2Szt4YsD3fPuayA",
@@ -1771,6 +1771,10 @@
     {
       "id": "UCDeehM_VG9ETUBVHBJC5r2Q",
       "name": "Kuppy Elbogen"
+    },
+    {
+      "id": "UCRrUv-6enDcNpOup7HcR0pw",
+      "name": "Latest Talks"
     },
     {
       "id": "UCSn8K-iS1UrpI4D_2hzJdkQ",
